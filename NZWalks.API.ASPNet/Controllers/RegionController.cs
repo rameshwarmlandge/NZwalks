@@ -20,9 +20,9 @@ namespace NZWalks.API.ASPNet.Controllers
             this.mapper = mapper;
         }
         [HttpGet]
-        public IActionResult GetAllRegions()
+        public async Task<IActionResult> GetAllRegions()
         {
-            var regions = regionRepository.GetAllRegion();
+            var regions = await regionRepository.GetAllRegionAsync();
             //
             // Retrunig data
             //
