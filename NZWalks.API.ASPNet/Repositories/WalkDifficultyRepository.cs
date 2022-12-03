@@ -12,7 +12,11 @@ namespace NZWalks.API.ASPNet.Repositories
         {
             this.nZWalksDbContext = nZWalksDbContext;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="walkDifficulty"></param>
+        /// <returns></returns>
         public async Task<WalkDifficulty> AddAsync(WalkDifficulty walkDifficulty)
         {
             walkDifficulty.Id = Guid.NewGuid();
@@ -20,7 +24,11 @@ namespace NZWalks.API.ASPNet.Repositories
             await nZWalksDbContext.SaveChangesAsync();
             return walkDifficulty;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<WalkDifficulty> DeleteAsync(Guid id)
         {
             var existingWalkDifficulty = await nZWalksDbContext.WalkDifficulties.FindAsync(id);
@@ -32,7 +40,10 @@ namespace NZWalks.API.ASPNet.Repositories
             }
             return null;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<WalkDifficulty>> GetAllAsync()
         {
             return await nZWalksDbContext.WalkDifficulties.ToListAsync();

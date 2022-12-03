@@ -18,7 +18,6 @@ namespace NZWalks.API.ASPNet.Repositories
         /// </summary>
         /// <param name="walk"></param>
         /// <returns></returns>
-
         public async Task<Walk> AddAsync(Walk walk)
         {
             // Assign New ID

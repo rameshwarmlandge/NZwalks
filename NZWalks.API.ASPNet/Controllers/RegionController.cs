@@ -3,12 +3,14 @@ using NZWalks.API.ASPNet.Models.DTO;
 using NZWalks.API.ASPNet.Repositories;
 using NZWalks.API.ASPNet.Models.Domain;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NZWalks.API.ASPNet.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[Controller]")]
-    public class RegionController : Controller
+    public class RegionController : ControllerBase
     {
         private readonly IRegionRepository regionRepository;
         private readonly IMapper mapper;
